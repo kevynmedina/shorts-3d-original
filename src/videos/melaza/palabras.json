@@ -1,0 +1,837 @@
+[
+  {
+    "palabra": "La",
+    "inicio": 0.086,
+    "fin": 0.193
+  },
+  {
+    "palabra": "melaza",
+    "inicio": 0.202,
+    "fin": 0.496
+  },
+  {
+    "palabra": "más",
+    "inicio": 0.505,
+    "fin": 0.684
+  },
+  {
+    "palabra": "dulce",
+    "inicio": 0.693,
+    "fin": 0.907
+  },
+  {
+    "palabra": "de",
+    "inicio": 0.916,
+    "fin": 0.987
+  },
+  {
+    "palabra": "Boston",
+    "inicio": 0.996,
+    "fin": 1.273
+  },
+  {
+    "palabra": "mató",
+    "inicio": 1.282,
+    "fin": 1.488
+  },
+  {
+    "palabra": "a",
+    "inicio": 1.496,
+    "fin": 1.514
+  },
+  {
+    "palabra": "veintiuna",
+    "inicio": 1.523,
+    "fin": 1.862
+  },
+  {
+    "palabra": "personas",
+    "inicio": 1.871,
+    "fin": 2.264
+  },
+  {
+    "palabra": "en",
+    "inicio": 2.273,
+    "fin": 2.371
+  },
+  {
+    "palabra": "mil",
+    "inicio": 2.38,
+    "fin": 2.514
+  },
+  {
+    "palabra": "novecientos",
+    "inicio": 2.523,
+    "fin": 2.979
+  },
+  {
+    "palabra": "diecinueve",
+    "inicio": 2.987,
+    "fin": 3.443
+  },
+  {
+    "palabra": "Es",
+    "inicio": 4.045,
+    "fin": 4.196
+  },
+  {
+    "palabra": "el",
+    "inicio": 4.205,
+    "fin": 4.286
+  },
+  {
+    "palabra": "quince",
+    "inicio": 4.295,
+    "fin": 4.536
+  },
+  {
+    "palabra": "de",
+    "inicio": 4.545,
+    "fin": 4.625
+  },
+  {
+    "palabra": "enero",
+    "inicio": 4.634,
+    "fin": 4.902
+  },
+  {
+    "palabra": "poco",
+    "inicio": 5.089,
+    "fin": 5.268
+  },
+  {
+    "palabra": "después",
+    "inicio": 5.277,
+    "fin": 5.571
+  },
+  {
+    "palabra": "de",
+    "inicio": 5.58,
+    "fin": 5.634
+  },
+  {
+    "palabra": "las",
+    "inicio": 5.643,
+    "fin": 5.768
+  },
+  {
+    "palabra": "doce",
+    "inicio": 5.777,
+    "fin": 5.991
+  },
+  {
+    "palabra": "y",
+    "inicio": 6.0,
+    "fin": 6.054
+  },
+  {
+    "palabra": "media",
+    "inicio": 6.062,
+    "fin": 6.375
+  },
+  {
+    "palabra": "Un",
+    "inicio": 6.991,
+    "fin": 7.125
+  },
+  {
+    "palabra": "tanque",
+    "inicio": 7.134,
+    "fin": 7.357
+  },
+  {
+    "palabra": "de",
+    "inicio": 7.366,
+    "fin": 7.446
+  },
+  {
+    "palabra": "quince",
+    "inicio": 7.455,
+    "fin": 7.696
+  },
+  {
+    "palabra": "metros",
+    "inicio": 7.705,
+    "fin": 8.054
+  },
+  {
+    "palabra": "en",
+    "inicio": 8.179,
+    "fin": 8.286
+  },
+  {
+    "palabra": "la",
+    "inicio": 8.295,
+    "fin": 8.357
+  },
+  {
+    "palabra": "calle",
+    "inicio": 8.366,
+    "fin": 8.58
+  },
+  {
+    "palabra": "Commercial",
+    "inicio": 8.589,
+    "fin": 8.991
+  },
+  {
+    "palabra": "guarda",
+    "inicio": 9.223,
+    "fin": 9.455
+  },
+  {
+    "palabra": "casi",
+    "inicio": 9.464,
+    "fin": 9.705
+  },
+  {
+    "palabra": "nueve",
+    "inicio": 9.714,
+    "fin": 9.902
+  },
+  {
+    "palabra": "millones",
+    "inicio": 9.911,
+    "fin": 10.259
+  },
+  {
+    "palabra": "de",
+    "inicio": 10.268,
+    "fin": 10.33
+  },
+  {
+    "palabra": "litros",
+    "inicio": 10.339,
+    "fin": 10.616
+  },
+  {
+    "palabra": "de",
+    "inicio": 10.625,
+    "fin": 10.679
+  },
+  {
+    "palabra": "melaza",
+    "inicio": 10.688,
+    "fin": 11.045
+  },
+  {
+    "palabra": "Tiene",
+    "inicio": 11.661,
+    "fin": 11.839
+  },
+  {
+    "palabra": "goteras",
+    "inicio": 11.848,
+    "fin": 12.196
+  },
+  {
+    "palabra": "desde",
+    "inicio": 12.205,
+    "fin": 12.384
+  },
+  {
+    "palabra": "el",
+    "inicio": 12.393,
+    "fin": 12.455
+  },
+  {
+    "palabra": "primer",
+    "inicio": 12.464,
+    "fin": 12.714
+  },
+  {
+    "palabra": "día",
+    "inicio": 12.723,
+    "fin": 12.946
+  },
+  {
+    "palabra": "y",
+    "inicio": 13.152,
+    "fin": 13.241
+  },
+  {
+    "palabra": "alguien",
+    "inicio": 13.25,
+    "fin": 13.473
+  },
+  {
+    "palabra": "las",
+    "inicio": 13.482,
+    "fin": 13.607
+  },
+  {
+    "palabra": "tapa",
+    "inicio": 13.616,
+    "fin": 13.821
+  },
+  {
+    "palabra": "con",
+    "inicio": 13.83,
+    "fin": 13.964
+  },
+  {
+    "palabra": "pintura",
+    "inicio": 13.973,
+    "fin": 14.348
+  },
+  {
+    "palabra": "Los",
+    "inicio": 14.964,
+    "fin": 15.116
+  },
+  {
+    "palabra": "vecinos",
+    "inicio": 15.125,
+    "fin": 15.446
+  },
+  {
+    "palabra": "bromean",
+    "inicio": 15.455,
+    "fin": 15.768
+  },
+  {
+    "palabra": "la",
+    "inicio": 16.0,
+    "fin": 16.054
+  },
+  {
+    "palabra": "melaza",
+    "inicio": 16.062,
+    "fin": 16.366
+  },
+  {
+    "palabra": "no",
+    "inicio": 16.375,
+    "fin": 16.527
+  },
+  {
+    "palabra": "se",
+    "inicio": 16.536,
+    "fin": 16.643
+  },
+  {
+    "palabra": "va",
+    "inicio": 16.652,
+    "fin": 16.768
+  },
+  {
+    "palabra": "a",
+    "inicio": 16.777,
+    "fin": 16.804
+  },
+  {
+    "palabra": "escapar",
+    "inicio": 16.812,
+    "fin": 17.241
+  },
+  {
+    "palabra": "Y",
+    "inicio": 17.857,
+    "fin": 17.973
+  },
+  {
+    "palabra": "entonces",
+    "inicio": 17.982,
+    "fin": 18.357
+  },
+  {
+    "palabra": "el",
+    "inicio": 18.366,
+    "fin": 18.455
+  },
+  {
+    "palabra": "tanque",
+    "inicio": 18.464,
+    "fin": 18.696
+  },
+  {
+    "palabra": "cede",
+    "inicio": 18.705,
+    "fin": 18.973
+  },
+  {
+    "palabra": "y",
+    "inicio": 19.188,
+    "fin": 19.259
+  },
+  {
+    "palabra": "una",
+    "inicio": 19.268,
+    "fin": 19.42
+  },
+  {
+    "palabra": "ola",
+    "inicio": 19.429,
+    "fin": 19.589
+  },
+  {
+    "palabra": "café",
+    "inicio": 19.598,
+    "fin": 19.821
+  },
+  {
+    "palabra": "corre",
+    "inicio": 19.83,
+    "fin": 20.036
+  },
+  {
+    "palabra": "a",
+    "inicio": 20.045,
+    "fin": 20.062
+  },
+  {
+    "palabra": "cincuenta",
+    "inicio": 20.071,
+    "fin": 20.402
+  },
+  {
+    "palabra": "y",
+    "inicio": 20.411,
+    "fin": 20.446
+  },
+  {
+    "palabra": "seis",
+    "inicio": 20.455,
+    "fin": 20.67
+  },
+  {
+    "palabra": "kilómetros",
+    "inicio": 20.679,
+    "fin": 21.134
+  },
+  {
+    "palabra": "por",
+    "inicio": 21.143,
+    "fin": 21.268
+  },
+  {
+    "palabra": "hora",
+    "inicio": 21.277,
+    "fin": 21.473
+  },
+  {
+    "palabra": "Hasta",
+    "inicio": 22.089,
+    "fin": 22.312
+  },
+  {
+    "palabra": "los",
+    "inicio": 22.321,
+    "fin": 22.429
+  },
+  {
+    "palabra": "caballos",
+    "inicio": 22.438,
+    "fin": 22.75
+  },
+  {
+    "palabra": "salen",
+    "inicio": 22.759,
+    "fin": 22.973
+  },
+  {
+    "palabra": "disparados",
+    "inicio": 22.982,
+    "fin": 23.527
+  },
+  {
+    "palabra": "Espera",
+    "inicio": 24.143,
+    "fin": 24.536
+  },
+  {
+    "palabra": "el",
+    "inicio": 24.723,
+    "fin": 24.848
+  },
+  {
+    "palabra": "dulce",
+    "inicio": 24.857,
+    "fin": 25.08
+  },
+  {
+    "palabra": "explotó",
+    "inicio": 25.089,
+    "fin": 25.5
+  },
+  {
+    "palabra": "Se",
+    "inicio": 26.116,
+    "fin": 26.295
+  },
+  {
+    "palabra": "rompe",
+    "inicio": 26.304,
+    "fin": 26.554
+  },
+  {
+    "palabra": "la",
+    "inicio": 26.562,
+    "fin": 26.643
+  },
+  {
+    "palabra": "pared",
+    "inicio": 26.652,
+    "fin": 26.937
+  },
+  {
+    "palabra": "Por",
+    "inicio": 27.562,
+    "fin": 27.688
+  },
+  {
+    "palabra": "suerte",
+    "inicio": 27.696,
+    "fin": 28.0
+  },
+  {
+    "palabra": "no",
+    "inicio": 28.205,
+    "fin": 28.348
+  },
+  {
+    "palabra": "hay",
+    "inicio": 28.357,
+    "fin": 28.473
+  },
+  {
+    "palabra": "explosión",
+    "inicio": 28.482,
+    "fin": 28.955
+  },
+  {
+    "palabra": "Por",
+    "inicio": 29.571,
+    "fin": 29.696
+  },
+  {
+    "palabra": "desgracia",
+    "inicio": 29.705,
+    "fin": 30.116
+  },
+  {
+    "palabra": "la",
+    "inicio": 30.357,
+    "fin": 30.429
+  },
+  {
+    "palabra": "ola",
+    "inicio": 30.438,
+    "fin": 30.58
+  },
+  {
+    "palabra": "mata",
+    "inicio": 30.589,
+    "fin": 30.821
+  },
+  {
+    "palabra": "a",
+    "inicio": 30.83,
+    "fin": 30.848
+  },
+  {
+    "palabra": "veintiuna",
+    "inicio": 30.857,
+    "fin": 31.188
+  },
+  {
+    "palabra": "personas",
+    "inicio": 31.196,
+    "fin": 31.616
+  },
+  {
+    "palabra": "y",
+    "inicio": 31.625,
+    "fin": 31.679
+  },
+  {
+    "palabra": "deja",
+    "inicio": 31.688,
+    "fin": 31.902
+  },
+  {
+    "palabra": "unos",
+    "inicio": 31.911,
+    "fin": 32.098
+  },
+  {
+    "palabra": "ciento",
+    "inicio": 32.107,
+    "fin": 32.348
+  },
+  {
+    "palabra": "cincuenta",
+    "inicio": 32.357,
+    "fin": 32.714
+  },
+  {
+    "palabra": "heridos",
+    "inicio": 32.723,
+    "fin": 33.107
+  },
+  {
+    "palabra": "Fíjate",
+    "inicio": 33.723,
+    "fin": 34.107
+  },
+  {
+    "palabra": "el",
+    "inicio": 34.33,
+    "fin": 34.455
+  },
+  {
+    "palabra": "acero",
+    "inicio": 34.464,
+    "fin": 34.723
+  },
+  {
+    "palabra": "era",
+    "inicio": 34.732,
+    "fin": 34.848
+  },
+  {
+    "palabra": "frágil",
+    "inicio": 34.857,
+    "fin": 35.17
+  },
+  {
+    "palabra": "algunos",
+    "inicio": 35.375,
+    "fin": 35.688
+  },
+  {
+    "palabra": "creen",
+    "inicio": 35.696,
+    "fin": 35.902
+  },
+  {
+    "palabra": "que",
+    "inicio": 35.911,
+    "fin": 36.009
+  },
+  {
+    "palabra": "el",
+    "inicio": 36.018,
+    "fin": 36.098
+  },
+  {
+    "palabra": "gas",
+    "inicio": 36.107,
+    "fin": 36.268
+  },
+  {
+    "palabra": "de",
+    "inicio": 36.277,
+    "fin": 36.33
+  },
+  {
+    "palabra": "la",
+    "inicio": 36.339,
+    "fin": 36.411
+  },
+  {
+    "palabra": "fermentación",
+    "inicio": 36.42,
+    "fin": 36.92
+  },
+  {
+    "palabra": "reventó",
+    "inicio": 36.929,
+    "fin": 37.232
+  },
+  {
+    "palabra": "los",
+    "inicio": 37.241,
+    "fin": 37.366
+  },
+  {
+    "palabra": "remaches",
+    "inicio": 37.375,
+    "fin": 37.83
+  },
+  {
+    "palabra": "Piensa",
+    "inicio": 38.446,
+    "fin": 38.696
+  },
+  {
+    "palabra": "en",
+    "inicio": 38.705,
+    "fin": 38.759
+  },
+  {
+    "palabra": "la",
+    "inicio": 38.768,
+    "fin": 38.83
+  },
+  {
+    "palabra": "última",
+    "inicio": 38.839,
+    "fin": 39.098
+  },
+  {
+    "palabra": "vez",
+    "inicio": 39.107,
+    "fin": 39.259
+  },
+  {
+    "palabra": "que",
+    "inicio": 39.268,
+    "fin": 39.33
+  },
+  {
+    "palabra": "apretaste",
+    "inicio": 39.339,
+    "fin": 39.723
+  },
+  {
+    "palabra": "un",
+    "inicio": 39.732,
+    "fin": 39.812
+  },
+  {
+    "palabra": "frasco",
+    "inicio": 39.821,
+    "fin": 40.089
+  },
+  {
+    "palabra": "de",
+    "inicio": 40.098,
+    "fin": 40.17
+  },
+  {
+    "palabra": "miel",
+    "inicio": 40.179,
+    "fin": 40.384
+  },
+  {
+    "palabra": "y",
+    "inicio": 40.393,
+    "fin": 40.429
+  },
+  {
+    "palabra": "se",
+    "inicio": 40.438,
+    "fin": 40.554
+  },
+  {
+    "palabra": "te",
+    "inicio": 40.562,
+    "fin": 40.634
+  },
+  {
+    "palabra": "salió",
+    "inicio": 40.643,
+    "fin": 40.884
+  },
+  {
+    "palabra": "por",
+    "inicio": 40.893,
+    "fin": 41.027
+  },
+  {
+    "palabra": "la",
+    "inicio": 41.036,
+    "fin": 41.098
+  },
+  {
+    "palabra": "tapa",
+    "inicio": 41.107,
+    "fin": 41.393
+  },
+  {
+    "palabra": "Y",
+    "inicio": 42.009,
+    "fin": 42.107
+  },
+  {
+    "palabra": "la",
+    "inicio": 42.116,
+    "fin": 42.196
+  },
+  {
+    "palabra": "empresa",
+    "inicio": 42.205,
+    "fin": 42.58
+  },
+  {
+    "palabra": "para",
+    "inicio": 42.768,
+    "fin": 42.92
+  },
+  {
+    "palabra": "no",
+    "inicio": 42.929,
+    "fin": 43.045
+  },
+  {
+    "palabra": "pagar",
+    "inicio": 43.054,
+    "fin": 43.339
+  },
+  {
+    "palabra": "culpó",
+    "inicio": 43.509,
+    "fin": 43.786
+  },
+  {
+    "palabra": "a",
+    "inicio": 43.795,
+    "fin": 43.821
+  },
+  {
+    "palabra": "los",
+    "inicio": 43.83,
+    "fin": 43.964
+  },
+  {
+    "palabra": "anarquistas",
+    "inicio": 43.973,
+    "fin": 44.554
+  },
+  {
+    "palabra": "Desde",
+    "inicio": 45.17,
+    "fin": 45.402
+  },
+  {
+    "palabra": "entonces",
+    "inicio": 45.411,
+    "fin": 45.857
+  },
+  {
+    "palabra": "la",
+    "inicio": 46.045,
+    "fin": 46.116
+  },
+  {
+    "palabra": "melaza",
+    "inicio": 46.125,
+    "fin": 46.42
+  },
+  {
+    "palabra": "se",
+    "inicio": 46.429,
+    "fin": 46.545
+  },
+  {
+    "palabra": "queda",
+    "inicio": 46.554,
+    "fin": 46.75
+  },
+  {
+    "palabra": "en",
+    "inicio": 46.759,
+    "fin": 46.821
+  },
+  {
+    "palabra": "el",
+    "inicio": 46.83,
+    "fin": 46.911
+  },
+  {
+    "palabra": "frasco",
+    "inicio": 46.92,
+    "fin": 47.259
+  }
+]
