@@ -112,9 +112,12 @@ salieron y cómo bajar el tiempo de render. Hay dos ejemplos completos: `realist
 9. **Revisión del look.** Saca fotos sueltas: `node plantillas/scripts/fotos.mjs out/x_ 20,100,200 0.5`.
    Ponlas junto a cuadros de `referencias/cuadros/` con `python plantillas/scripts/sbs_sheet.py` y revisa.
 10. **Medición.** Mide tu render igual que la referencia:
-    `python herramientas/medir_30fps.py out/video.mp4 out/medida`. Saca hojas de 60 cuadros, cortes, % de cuadros
-    con la cámara en movimiento, brillo, contraste y saturación. Meta: cámara moviéndose en más del 80 % de los
-    cuadros y 0–1 cortes duros.
+    `python herramientas/medir_30fps.py out/video.mp4 out/medida --sin-rotulos`. Saca hojas de 60 cuadros, cortes,
+    % de cuadros con la cámara en movimiento, tramos congelados, brillo, contraste y saturación. Meta: cámara
+    moviéndose en más del 80 % de los cuadros, 0 tramos congelados (12+ cuadros quietos) y 0–1 cortes duros.
+    `--sin-rotulos` ignora las franjas de cifras y subtítulos, que de lo contrario engañan la medición (parecen
+    cámara quieta). Para rótulos en otras zonas usa `--ignorar a-b` (fracción de la altura). Nunca muevas los
+    rótulos con la cámara para pasar la métrica.
 11. **Render final.**
     `npx remotion render src/index.ts <Composición> out/video.mp4 --codec h264 --crf 16`
     y junta el audio con `-map 0:v:0 -map 1:a:0` (Remotion escribe una pista de audio muda).

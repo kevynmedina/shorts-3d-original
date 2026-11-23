@@ -5,9 +5,20 @@ Saca:
   medidas.csv         -> por cuadro: desplazamiento x/y (px a 1080 de ancho), zoom (%),
                          giro (grados), diferencia (cortes), brillo, contraste, saturación
   resumen.json        -> cortes, % de cuadros con cámara en movimiento, movimientos
-                         (inicio, fin, duración, tipo, curva)
-Uso: /usr/bin/python3 medir_30fps.py video.mp4 carpeta_salida
+                         (inicio, fin, duración, tipo, curva) y tramos congelados (>= 12 cuadros quietos)
+
+Uso:
+  .venv\\Scripts\\python.exe herramientas\\medir_30fps.py video.mp4 carpeta_salida
+  .venv\\Scripts\\python.exe herramientas\\medir_30fps.py video.mp4 carpeta_salida --sin-rotulos
+  .venv\\Scripts\\python.exe herramientas\\medir_30fps.py video.mp4 carpeta_salida --ignorar 0.55-0.80 --ignorar 0-0.15
+
+Rótulos (subtítulos, cifras, marcas de agua) pegados a la pantalla engañan la medición: son 2D, no se
+mueven con la cámara y tienen mucho contraste, así que el ajuste ORB/RANSAC se queda con ellos y cree
+que la cámara está quieta. Con --sin-rotulos (o --ignorar) esas franjas no se usan para medir la
+cámara, y se puede medir el video FINAL con subtítulos sin renderizar otra versión.
+NUNCA muevas los rótulos con la cámara para «pasar» la métrica: sube el número sin mejorar la cámara.
 """
+import argparse
 import csv
 import json
 import os
@@ -21,6 +32,17 @@ from PIL import Image, ImageDraw
 W, H = 270, 480          # tamaño para medir (escala 0.25 de 1080x1920)
 TW, TH = 108, 192        # miniatura en la hoja
 ESCALA = 1080 / W
+# franjas estándar de nuestros shorts (fracción de la altura): cifras arriba y subtítulos (CLAUDE.md)
+ROTULOS = [(0.0, 0.15), (0.55, 0.80)]
+CONGELADO_MIN = 12       # cuadros seguidos sin movimiento que cuentan como tramo congelado
+
+
+def mascara(franjas):
+    """Máscara 8-bit a W x H: 255 donde se mide, 0 en las franjas ignoradas."""
+    m = np.full((H, W), 255, np.uint8)
+    for a, b in franjas:
+        m[int(round(a * H)):int(round(b * H)), :] = 0
+    return m
 
 
 def cuadros(ruta):
@@ -34,10 +56,10 @@ def cuadros(ruta):
         yield np.frombuffer(b, np.uint8).reshape(H, W, 3)
 
 
-def movimiento(prev_g, g, orb, bf):
-    """Escala, giro y traslación entre dos cuadros (puntos ORB + afín parcial)."""
-    k1, d1 = orb.detectAndCompute(prev_g, None)
-    k2, d2 = orb.detectAndCompute(g, None)
+def movimiento(prev_g, g, orb, bf, masc=None):
+    """Escala, giro y traslación entre dos cuadros (puntos ORB + afín parcial), fuera de la máscara."""
+    k1, d1 = orb.detectAndCompute(prev_g, masc)
+    k2, d2 = orb.detectAndCompute(g, masc)
     if d1 is None or d2 is None or len(k1) < 12 or len(k2) < 12:
         return None
     m = bf.match(d1, d2)
@@ -57,8 +79,25 @@ def movimiento(prev_g, g, orb, bf):
     return (nx - cx) * ESCALA, (ny - cy) * ESCALA, (s - 1) * 100, ang
 
 
+def franja(texto):
+    a, b = (float(x) for x in texto.split("-"))
+    if not 0 <= a < b <= 1:
+        raise argparse.ArgumentTypeError("usa fracciones de la altura, p. ej. 0.55-0.80")
+    return a, b
+
+
 def main():
-    ruta, out = sys.argv[1], sys.argv[2]
+    ap = argparse.ArgumentParser(description="Mide un short a 30 fps: cámara, cortes, color.")
+    ap.add_argument("video")
+    ap.add_argument("salida")
+    ap.add_argument("--sin-rotulos", action="store_true",
+                    help="ignora las franjas estándar de cifras (0-0.15) y subtítulos (0.55-0.80)")
+    ap.add_argument("--ignorar", type=franja, action="append", default=[],
+                    help="franja horizontal a ignorar, en fracción de la altura (repetible), p. ej. 0.55-0.80")
+    args = ap.parse_args()
+    ruta, out = args.video, args.salida
+    franjas = (ROTULOS if args.sin_rotulos else []) + args.ignorar
+    masc = mascara(franjas) if franjas else None
     os.makedirs(os.path.join(out, "hojas"), exist_ok=True)
     orb = cv2.ORB_create(800)
     bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
@@ -71,8 +110,9 @@ def main():
                 "dif": 0.0, "brillo": round(float(lum.mean()), 3), "contraste": round(float(lum.std()), 3),
                 "saturacion": round(float(hsv[..., 1].mean() / 255), 3), "sin_medida": 0}
         if prev_g is not None:
-            fila["dif"] = round(float(np.abs(g.astype(np.int16) - prev_g.astype(np.int16)).mean()), 2)
-            r = movimiento(prev_g, g, orb, bf)
+            d = np.abs(g.astype(np.int16) - prev_g.astype(np.int16))
+            fila["dif"] = round(float(d[masc > 0].mean() if masc is not None else d.mean()), 2)
+            r = movimiento(prev_g, g, orb, bf, masc)
             if r is None:
                 fila["sin_medida"] = 1
             else:
@@ -91,8 +131,11 @@ def main():
         w = csv.DictWriter(f, fieldnames=list(filas[0].keys()))
         w.writeheader()
         w.writerows(filas)
-    json.dump(resumen(filas), open(os.path.join(out, "resumen.json"), "w"), indent=1, ensure_ascii=False)
-    print(json.dumps(resumen(filas)["general"], ensure_ascii=False))
+    res = resumen(filas)
+    res["general"]["franjas_ignoradas"] = [list(f) for f in franjas]
+    with open(os.path.join(out, "resumen.json"), "w", encoding="utf-8") as f:
+        json.dump(res, f, indent=1, ensure_ascii=False)
+    print(json.dumps(res["general"], ensure_ascii=False))
 
 
 def guardar_hoja(hoja, out):
@@ -144,8 +187,19 @@ def resumen(filas):
         movs.append({"inicio": a, "fin": b, "cuadros": b - a + 1, "tipo": tipo,
                      "px_por_cuadro_max": round(float(v.max()), 2), "zoom_total_pct": round(float(z.sum()), 2),
                      "pico_en": f"{round(100 * pico / max(1, b - a))}% del tramo"})
+    # tramos congelados: CONGELADO_MIN o más cuadros seguidos sin movimiento (los cortes no rompen el tramo)
+    congelados, ini = [], None
+    for i, m in enumerate(list(mov) + [True]):
+        if not m and ini is None:
+            ini = i
+        elif m and ini is not None:
+            if i - ini >= CONGELADO_MIN:
+                congelados.append({"inicio": ini, "fin": i - 1, "cuadros": i - ini})
+            ini = None
     return {
         "general": {
+            "tramos_congelados": len(congelados),
+            "cuadros_congelados": int(sum(c["cuadros"] for c in congelados)),
             "cuadros": n, "segundos": round(n / 30, 2), "cortes": len(cortes),
             "pct_cuadros_camara_moviendose": round(100 * mov.mean(), 1),
             "pct_cuadros_con_zoom": round(100 * (zoom > 0.03).mean(), 1),
@@ -156,6 +210,7 @@ def resumen(filas):
             "duracion_mediana_movimiento_cuadros": int(np.median([m["cuadros"] for m in movs])) if movs else 0,
         },
         "cortes_en_cuadro": cortes,
+        "tramos_congelados": congelados,
         "movimientos": movs,
     }
 

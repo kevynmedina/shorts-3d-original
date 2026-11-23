@@ -28,20 +28,21 @@ Solo el grupo A (y en parte el B) corresponde al look que pide `CLAUDE.md`. Los 
 
 ## Movimiento de cámara (medido a 30 fps)
 
-Medido con `herramientas/medir_30fps.py` en los 4 videos relevantes. Datos cuadro por cuadro en `referencias/movimiento/<video>/`.
+Medido con `herramientas/medir_30fps.py` en los 4 videos relevantes, **ignorando la franja de subtítulos y la marca de agua de TikTok de cada video** (`--ignorar`). Datos cuadro por cuadro en `referencias/movimiento/<video>_sin_rotulos/`. La primera medición, sin máscara, queda en `referencias/movimiento/<id del video>/` solo como registro.
 
-| Video | Dur. (s) | Cortes duros | Cuadros con cámara en movimiento | Cuadros con zoom | Movimientos | Duración mediana de un movimiento | Saturación media |
-|---|---|---|---|---|---|---|---|
-| Herencias | 72.0 | 10 | **90.6 %** | 86.6 % | 18 | 38 cuadros | 0.62 |
-| Trabajar (3D completo) | 62.1 | 24 | 56.5 % | 51.7 % | 49 | 15 cuadros | 0.55 |
-| Epstein | 83.1 | 10 | 46.7 % | 38.7 % | 60 | 9 cuadros | 0.46 |
-| Sócrates | 77.8 | 22 | 39.2 % | 34.2 % | 55 | 9 cuadros | 0.45 |
+| Video | Franjas ignoradas | Cámara en movimiento (sin máscara → con máscara) | Cuadros con zoom | Tramos congelados (12+ cuadros) | Duración mediana de un movimiento | Saturación media |
+|---|---|---|---|---|---|---|
+| Herencias | 0.50–0.68, 0.80–0.92 | 90.6 % → **92.5 %** | 90.2 % | 0 | 103 cuadros | 0.62 |
+| Epstein | 0.70–0.88 | 46.7 % → **86.2 %** | 81.8 % | 4 (67 cuadros) | 82 cuadros | 0.46 |
+| Sócrates | 0.70–0.88 | 39.2 % → **82.1 %** | 80.5 % | 3 (59 cuadros) | 31 cuadros | 0.45 |
+| Trabajar (3D completo) | 0.03–0.18, 0.80–0.92 | 56.5 % → **62.8 %** | 58.1 % | 15 (287 cuadros) | 19 cuadros | 0.55 |
 
-- **Solo Herencias supera nuestra meta** (más del 80 % de cuadros en movimiento). Tiene pocos movimientos, pero largos (más de 1 s) y casi todos de acercamiento o alejamiento lento. Es el modelo de cámara a seguir.
-- **Sócrates y Epstein** (los más parecidos a nuestro look) están en 39 y 47 %: muchos movimientos de ~9 cuadros (0.3 s) con la cámara quieta entre uno y otro. Quedan por debajo del 65 % que la biblia midió en el canal de referencia.
-- **Nuestra meta del 80 %** es más exigente que casi todos los videos de referencia. Para cumplirla hay que mantener un acercamiento o deriva lenta en casi todas las tomas, en vez de movimientos cortos con pausas.
-- **Con cuidado:** los cuadros de cortes duros no cuentan como movimiento, y los ~4 s finales de pantalla de TikTok también entran en el cálculo. «Trabajar» es muy oscuro (brillo medio 0.19), lo que dificulta detectar puntos de referencia, así que su 56.5 % puede estar subestimado.
-
+- **La primera medición estaba equivocada.** Los subtítulos quemados son 2D, no se mueven con la cámara y tienen mucho contraste: el script se quedaba con ellos y veía la cámara quieta. Sin esa franja, Sócrates pasa de 39 a 82 % y Epstein de 47 a 86 %.
+- **Tres de los cuatro superan nuestra meta del 80 %**, incluidos los dos más parecidos a nuestro look (Sócrates y Epstein). La meta de `CLAUDE.md` es exigente pero realista: es lo que ya hace el canal de referencia.
+- **Patrón común:** movimientos largos y continuos (mediana de 31 a 103 cuadros, es decir, de 1 a 3.4 s), casi siempre con zoom lento (80 a 90 % de los cuadros). No son movimientos cortos con pausas, como sugería la medición sin máscara.
+- **Herencias** sigue siendo el modelo más limpio: 92.5 % sin ningún tramo congelado, con 12 movimientos muy largos.
+- **Trabajar** queda en 62.8 %, pero con reservas: es muy oscuro (brillo medio 0.19), lo que dificulta detectar puntos de referencia, y sus ~4 s finales de pantalla de TikTok casi estática entran en los tramos congelados.
+- **Con cuidado:** con máscara aumentan los cortes detectados (por ejemplo, Herencias pasa de 10 a 24), porque la diferencia entre cuadros se calcula sobre menos superficie. Para cortes, el dato sin máscara es más comparable con la medición anterior.
 ## Subtítulos observados
 
 | Video | Posición | Estilo |
@@ -73,7 +74,7 @@ Todos tienen la marca de agua de TikTok con el usuario abajo a la derecha, y la 
 5. Cambiar la luz con la historia (cálido → atardecer → azul para la explicación).
 6. Cierre en bucle cuando el guion lo permita.
 7. Subtítulos con palabra activa resaltada, en la zona de 55 a 72 %.
-8. Cámara al estilo de Herencias: pocos movimientos pero largos (más de 1 s), con acercamiento o deriva lenta en casi todas las tomas, para pasar del 80 % de cuadros en movimiento.
+8. Cámara como Herencias, Sócrates y Epstein: movimientos largos y continuos (1 a 3 s) con zoom lento en casi todos los cuadros, para pasar del 80 % de cuadros en movimiento. Medir siempre con `--sin-rotulos` (o `--ignorar`) para que los subtítulos no engañen la medición.
 
 ## Contradicción por resolver
 

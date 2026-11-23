@@ -13,3 +13,7 @@ referencias/videos/*
 !referencias/videos/.gitkeep
 referencias/analisis/
 referencias/movimiento/
+
+# Audio regenerable de cada short (efectos con semilla fija; voz.mp3 es intermedio de voz.wav)
+src/videos/*/audio/efectos*.wav
+src/videos/*/voz.mp3
