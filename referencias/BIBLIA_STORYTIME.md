@@ -1,6 +1,6 @@
 # Biblia de storytime serializado (estudio de un storytime de referencia en 4 partes)
 
-Fuente: medido sobre `referencias\videos\parte1.mp4`–`parte4.mp4` con `herramientas\medir_30fps.py`, ffmpeg/ffprobe y faster-whisper; datos y fotogramas en `out\analisis_storytime\`. Solo para estudiar el estilo: no se copian guiones, personajes ni tomas.
+Fuente: medido sobre `referencias\videos\parte1.mp4`–`parte4.mp4` con `herramientas\medir_30fps.py`, ffmpeg/ffprobe y faster-whisper el 23/11/2026; la carpeta temporal `out\analisis_storytime\` se eliminó tras extraer las métricas (las cifras de este documento son la única copia). Solo para estudiar el estilo: no se copian guiones, personajes ni tomas.
 
 ## Formato
 
@@ -57,6 +57,7 @@ Fuente: medido sobre `referencias\videos\parte1.mp4`–`parte4.mp4` con `herrami
 - **Fondos y profundidad:** escenarios ilustrados planos con desenfoque suave (profundidad de campo), tres capas (fondo en perspectiva, muebles, personaje nítido); paneos laterales lentos; viñeteado en recap, flashback y CTA.
 - **Color e iluminación:** saturación media 0.26 (0.248 / 0.311 / 0.269 / 0.205), brillo Y medio 133/255 (136.3 / 124.2 / 128.8 / 143.1); azules fríos y beiges cálidos; recap a saturación 0.09–0.18, flashback 0.04–0.11; escenas nocturnas azules de brillo bajo. Sin sombras azul-violeta.
 - **Nuestra regla: el estilo visual del Formato 2 sigue usando nuestro pipeline Remotion + Three.js (`src\videos\melaza\look\toon.ts` y `src\videos\melaza\look\shade.ts`; plantillas equivalentes en `plantillas\alejandro\` y `plantillas\puente\`), con personajes planos de caricatura (contorno, luz cálida y sombras azul-violeta) sobre mundos 3D pintados. De la referencia solo se adaptan: (a) la composición y el encuadre, (b) las tarjetas centrales de datos y documentos, (c) los recaps desaturados «ANTES:» y (d) los subtítulos en mayúsculas de 1–3 palabras con la palabra clave resaltada.**
+- **Flashbacks:** los recuerdos dentro del episodio van en tramos desaturados (saturación ≤ 0.11, como el flashback medido de la referencia, 0.04–0.11), con viñeta, y vuelven a color con corte duro o fundido corto. No se adoptan el contorno claro del personaje ni el desenfoque de fondo (desactivado por rendimiento).
 
 ## Cámara y edición (medido)
 
