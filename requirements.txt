@@ -1,0 +1,15 @@
+# Dependencias directas de Python (las transitivas las resuelve pip).
+# Instalar con:  python -m venv .venv  y luego  .venv\Scripts\python.exe -m pip install -r requirements.txt
+edge-tts==7.3.1        # voz narrativa (es-MX-JorgeNeural)
+faster-whisper==1.2.1  # palabras.json: sincronia palabra a palabra de los subtitulos
+numpy==2.5.5
+scipy==1.18.1          # audio sintetizado y mezcla (plantillas\audio)
+opencv-python==5.1.0.95  # herramientas\medir_30fps.py y analizar_referencias.py
+pillow==13.0.0         # hojas y capturas
+
+# Opcional: aceleracion por GPU NVIDIA para faster-whisper (no hace falta en CPU)
+# nvidia-cublas-cu12==12.9.2.10
+# nvidia-cudnn-cu12==9.28.1.4
+
+# Nota: bpy y mathutils (carpeta realista\) vienen dentro de Blender, no se instalan con pip.
+# Herramientas externas fuera de pip: Node.js, ffmpeg/ffprobe y yt-dlp (solo competitor-analysis).

@@ -54,6 +54,20 @@ Pídele primero a Claude que revise qué tienes instalado y que te explique cada
 - **Caricatura:** Node, Python 3, ffmpeg y un proyecto de [Remotion](https://www.remotion.dev/) con `@remotion/three`. El archivo `plantillas/alejandro/package_ejemplo.json` es una referencia de dependencias; no es un proyecto listo para ejecutar.
 - **Realista:** Blender 5.x y los recursos que requiera la escena; consulta `realista/recursos/FUENTES.md`. Algunos recursos se descargan por separado. Los scripts de ejemplo renderizan imagen a MP4, pero la voz y la música requieren pasos adicionales.
 
+### Puesta en marcha rápida (Windows)
+
+Requisitos fuera de este repo: **Node.js**, **ffmpeg/ffprobe** en el `PATH` y **Python 3**. `yt-dlp` solo hace falta para el análisis de otros canales. Blender solo si usas el estilo realista.
+
+```
+npm install
+python -m venv .venv
+.venv\Scripts\python.exe -m pip install -r requirements.txt
+```
+
+- `requirements.txt` lista las dependencias de Python (voz con `edge-tts`, subtítulos con `faster-whisper`, audio con `scipy`, medición con `opencv-python`). `bpy` y `mathutils` vienen dentro de Blender.
+- `RENDERIZAR.bat` renderiza el short de ejemplo y deja el resultado en `out\`.
+- **No viene en el repo** (está en `.gitignore`): `node_modules/`, `.venv/`, `out/`, `referencias/videos/` y `referencias/analisis/`. Se regeneran con los comandos de arriba; el análisis de referencias solo si pones tus propios videos en `referencias/videos/`.
+
 Para que Claude encuentre la skill en otras conversaciones, pídele que te ayude a instalar la carpeta completa en el directorio de skills de tu sistema. En macOS/Linux, el README anterior indicaba `~/.claude/skills/shorts-animados-3d/`; en Windows pídele que compruebe la ruta para tu instalación. Primero puedes usar el mensaje de arriba desde la carpeta extraída, sin mover archivos.
 
 Claude sigue `SKILL.md`: tema y datos, guion, voz, plan de tomas en `story.ts`, fotos de prueba, medición y render.
