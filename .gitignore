@@ -3,3 +3,13 @@ node_modules/
 .venv/
 out/
 .claude/settings.local.json
+
+# Python
+__pycache__/
+*.pyc
+
+# Videos de referencia de terceros y resultados del anÃ¡lisis (pesados, regenerables)
+referencias/videos/*
+!referencias/videos/.gitkeep
+referencias/analisis/
+referencias/movimiento/

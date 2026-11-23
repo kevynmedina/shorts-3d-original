@@ -9,7 +9,10 @@ Solo para estudiar el estilo: no se copian guiones, personajes ni tomas.
 - Voz: un solo narrador, rápido y parejo, ~3.7 palabras por segundo en inglés, casi sin pausas (menos de 1 s de
   silencios en todo el video). En español apunta a 3.2–3.8.
 - Volumen -14 LUFS, muy comprimido. Música y efectos solo 5–10 dB abajo de la voz.
-- La referencia usa subtítulos de una palabra a la vez. **Nuestra regla: sin subtítulos**, salvo que los pidan.
+- La referencia usa subtítulos de una o pocas palabras a la vez. **Nuestra regla: subtítulos dinámicos obligatorios**
+  (`CLAUDE.md`): grandes, centrados, con contorno oscuro y sincronizados palabra a palabra con `palabras.json`. Van en
+  la franja de ~55 a 72 % de la altura, dejando libre ~20 % inferior y ~10 % superior del cuadro 1080x1920, sin
+  tapar a los personajes. Sin recuadros, subrayados ni flechas sobre los personajes.
 
 ## Fórmula del guion (la siguen los 20)
 1. **Gancho = una paradoja dicha como hecho**, primera frase, sin preparación. Alguien hizo algo que suena tonto o
