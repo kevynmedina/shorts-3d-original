@@ -52,7 +52,7 @@ La sesión principal (Opus) es el **orquestador**. Planea, decide, habla con el 
 - **Subtítulos dinámicos obligatorios:** subtítulos grandes, centrados y con contorno oscuro, sincronizados palabra a palabra con `palabras.json`, colocados en una zona segura: sin tapar a los personajes ni la interfaz inferior de YouTube Shorts (dejar libre aproximadamente el 20 % inferior y el 10 % superior del cuadro 1080x1920). Las cifras discretas arriba del cuadro se mantienen. Sin recuadros, subrayados ni flechas sobre los personajes.
 - **Densidad visual:** dividir el guion en 6 a 8 tomas cortas (4 a 7 s por toma); cada frase clave tiene una acción visual explícita en pantalla; evitar escenas largas estáticas y planos congelados (ningún tramo de 12 cuadros o más sin movimiento, salvo que sea intencional).
 - **Cámara:** meta estricta de más del 80 % de los cuadros en movimiento (`SKILL.md`). Casi sin cortes duros. Las transiciones entre escenarios son continuas: `XFADE` de 6 cuadros.
-- **Sonido:** sintetizado con los recursos de `plantillas\audio\`. Música y efectos de 5 a 10 dB debajo de la voz. Mezcla final a -14 LUFS.
+- **Sonido:** sintetizado con los recursos de `plantillas\audio\`. Música y efectos de 10 a 14 dB debajo de la voz (medido en LUFS integrado de cada pista; el short del baile quedó en ~13 LU), con un recorte de ecualización en la música alrededor de 2.5 kHz para que no tape la voz. Mezcla final a -14 LUFS.
 - **Look:** personajes planos de caricatura sobre mundos 3D pintados, con líneas de tinta sobre la geometría y luz cálida con sombras azul-violeta. Revisa el look con fotos de prueba antes del render final.
 
 ## 4. Entorno Windows

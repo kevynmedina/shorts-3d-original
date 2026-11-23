@@ -60,7 +60,7 @@ salieron y cómo bajar el tiempo de render. Hay dos ejemplos completos: `realist
 - Nada de recuadros, subrayados ni flechas encima de los personajes. Una cifra importante (p. ej. «47,000») va
   discreta, arriba del cuadro, sin tapar a nadie.
 - Los chistes y datos son hechos reales investigados, con su fuente.
-- Mezcla: voz al frente; música y efectos de 5 a 10 dB abajo; -14 LUFS al final.
+- Mezcla: voz al frente; música y efectos de 10 a 14 dB abajo (LUFS integrado de cada pista), con recorte de EQ en la música alrededor de 2.5 kHz; -14 LUFS al final. (La referencia usa 5–10 dB, pero al oído la música tapaba la voz.)
 - Exporta vertical 1080x1920 (o 1440x2560 con `--scale 1.3333`).
 - Guarda después de cada paso. Una vez aprobado el guion, hazlo de corrido.
 

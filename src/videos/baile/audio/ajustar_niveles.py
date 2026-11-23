@@ -1,4 +1,4 @@
-"""Ajusta los efectos ventana a ventana (1 s, para conservar la dinámica de la música) para que queden 7,5 dB por debajo de la voz.
+"""Ajusta los efectos ventana a ventana (1 s, para conservar la dinámica de la música) para que queden OBJETIVO_DB por debajo de la voz (~13 LU en LUFS integrado), con un hueco de EQ en la banda de la voz.
 
 Sidechain por voz: si la voz baja (pausas), los efectos también bajan; si la voz sube, se mantienen en
 su relación. Ganancia limitada a 0,05–2,5 y suavizada 50 ms. Salida: efectos_ajustados.wav (estéreo, 48 kHz).
