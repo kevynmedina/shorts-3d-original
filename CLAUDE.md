@@ -36,6 +36,13 @@ La sesión principal (Opus) es el **orquestador**. Planea, decide, habla con el 
 - Las tareas triviales (leer un archivo, una edición de una línea) las hace el orquestador directamente. Delegar es para trabajo con varios pasos o que ocupa mucho contexto.
 - Si un tipo de agente no carga, usa `general-purpose` y pásale como instrucción el contenido de su archivo en `.claude\agents\`.
 
+## Formatos disponibles
+
+Antes de la Parada 1 se elige uno de estos formatos:
+
+- **Formato 1 — Historia corta autoconclusiva (40–55 s):** sigue `referencias\BIBLIA_DE_ESTILO.md` y las reglas de la sección 3.
+- **Formato 2 — Storytime serializado por partes:** sigue `referencias\BIBLIA_STORYTIME.md`. Mantiene las reglas de la sección 3 (fuentes verificadas, look, subtítulos en zona segura, cámara, sonido) salvo duración, ritmo de voz, apertura y cierre, que se rigen por esa biblia.
+
 ## 3. Estilo: caricatura 2D en mundo 3D (Three.js + Remotion, 1080x1920, 30 fps)
 
 - **Historia real con fuentes verificadas.** Cada cifra, nombre y chiste tiene fuente. Si las cifras varían entre fuentes antiguas y historiadores modernos, se usa la estimación moderna y se dice así. No se copian guiones, personajes ni tomas del canal de referencia.
